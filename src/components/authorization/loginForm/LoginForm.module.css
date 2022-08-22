@@ -34,17 +34,3 @@
 .p {
     width: 250px;
 }
-
-.buttonBlock {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 250px;
-}
-
-.button {
-    width: 85px;
-    height: 25px;
-    border-radius: 5px;
-    color: #bb1b1b;
-}

@@ -4,8 +4,9 @@ import {
   initialErrorsState,
   initialLoginDataState,
 } from '../../../constants/authorization';
-import { Input } from '../Input/Input';
 
+import { ButtonBlock } from './buttonBlock/ButtonBlock';
+import { Input } from './Input/Input';
 import style from './LoginForm.module.css';
 
 export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
@@ -87,14 +88,7 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
         *If you are interested in a one-time purchase without registration, enter admin in
         the email and password fields
       </p>
-      <div className={style.buttonBlock}>
-        <button className={style.button} type="button" onClick={cancelClick}>
-          Cancel
-        </button>
-        <button className={style.button} type="button" onClick={checkValidForm}>
-          Save
-        </button>
-      </div>
+      <ButtonBlock checkValidForm={checkValidForm} cancelClick={cancelClick} />
     </div>
   );
 };
