@@ -64,7 +64,7 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
           X
         </button>
       </div>
-      Login
+      <h2>Login</h2>
       <Input
         label="Email"
         placeholder="Type your email..."
@@ -83,12 +83,18 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
         value={loginData.password}
         error={errors.password}
       />
-      <button className={style.button} type="button" onClick={cancelClick}>
-        Cancel
-      </button>
-      <button type="button" onClick={checkValidForm}>
-        Save
-      </button>
+      <p className={style.p}>
+        *If you are interested in a one-time purchase without registration, enter admin in
+        the email and password fields
+      </p>
+      <div className={style.buttonBlock}>
+        <button className={style.button} type="button" onClick={cancelClick}>
+          Cancel
+        </button>
+        <button className={style.button} type="button" onClick={checkValidForm}>
+          Save
+        </button>
+      </div>
     </div>
   );
 };

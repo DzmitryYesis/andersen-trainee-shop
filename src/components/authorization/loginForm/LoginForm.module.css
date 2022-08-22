@@ -4,7 +4,7 @@
     border-radius: 8px;
     top: 30%;
     position: fixed;
-    right: 25%;
+    right: 35%;
     background: #ffffff;
     padding: 0 0 18px 16px;
     color: #092878;
@@ -29,6 +29,17 @@
     border-radius: 8px;
     background-color: red;
     color: white;
+}
+
+.p {
+    width: 250px;
+}
+
+.buttonBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 250px;
 }
 
 .button {
