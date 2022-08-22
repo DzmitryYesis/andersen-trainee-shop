@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import style from './MainPage.module.css';
 
-export const MainPage = () => {
+export const MainPage = ({ isLoggedIn }) => {
   const [state, setState] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const MainPage = () => {
           />
           <p>{product.title}</p>
           <p>{product.price}</p>
-          <button type="button">Add</button>
+          <button type="button">{isLoggedIn ? 'Add' : 'Login for added'}</button>
         </div>
       ))}
     </div>

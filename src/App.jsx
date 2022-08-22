@@ -12,10 +12,18 @@ const App = () => {
   return (
     <div className={style.app}>
       <header className={style.header}>
-        <Header setIsShowPopUp={setIsShowPopUp} />
+        <Header
+          setIsShowPopUp={setIsShowPopUp}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+        />
       </header>
-      <MainPage />
-      <Authorization isShowPopUp={isShowPopUp} setIsShowPopUp={setIsShowPopUp} />
+      <MainPage isLoggedIn={isLoggedIn} />
+      <Authorization
+        isShowPopUp={isShowPopUp}
+        setIsShowPopUp={setIsShowPopUp}
+        setIsLoggedIn={setIsLoggedIn}
+      />
     </div>
   );
 };

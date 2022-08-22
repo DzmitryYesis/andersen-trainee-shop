@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.shoppingCart {
+    display: flex;
+    flex-direction: column;
+}

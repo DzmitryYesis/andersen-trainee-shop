@@ -1,12 +1,12 @@
 .notifications {
-    max-width: 350px;
-    width: 370px;
+    max-width: 450px;
+    width: 500px;
     border-radius: 8px;
-    top: 50%;
+    top: 30%;
     position: fixed;
-    right: 35%;
+    right: 25%;
     background: #ffffff;
-    padding: 18px 0 18px 16px;
+    padding: 0 0 18px 16px;
     color: #092878;
     font-size: 16px;
     letter-spacing: 0.3px;
@@ -14,6 +14,21 @@
     flex-direction: column;
     align-items: center;
     z-index: 999;
+}
+
+.buttonXWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100%;
+}
+
+.buttonX {
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+    background-color: red;
+    color: white;
 }
 
 .button {

@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3px;
+}
+
+.label {
+    text-align: left;
+    color: #092878;
+}
+
+.input {
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.span {
+    color: #bb1b1b;
+}
+
+.errorDiv {
+    height: 18px;
+}
