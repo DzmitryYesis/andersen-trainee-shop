@@ -1,0 +1,39 @@
+.notifications {
+    max-width: 450px;
+    width: 500px;
+    border-radius: 8px;
+    top: 30%;
+    position: fixed;
+    right: 25%;
+    background: #ffffff;
+    padding: 0 0 18px 16px;
+    color: #092878;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+
+.buttonXWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100%;
+}
+
+.buttonX {
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+    background-color: red;
+    color: white;
+}
+
+.button {
+    width: 85px;
+    height: 25px;
+    border-radius: 5px;
+    color: #bb1b1b;
+}
