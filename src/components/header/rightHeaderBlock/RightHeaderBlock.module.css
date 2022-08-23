@@ -1,16 +1,30 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    height: 75px;
+}
+
+.rowDiv {
+    display: flex;
+    flex-direction: row;
 }
 
 .shoppingCart {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .countSum {
     margin-right: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.button {
+    margin-right: 10px;
+    height: 60px;
+    width: 70px;
+    border-radius: 5px;
+    background-color: gray;
+    font-size: 17px;
 }
