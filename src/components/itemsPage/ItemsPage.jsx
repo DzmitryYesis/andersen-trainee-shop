@@ -25,7 +25,7 @@ export const ItemsPage = ({ isLoggedIn, cartChangeItemsPage }) => {
             />
           </div>
           <div className={style.divTitle}>
-            <Link key={product.id} to={`/${product.id}`}>
+            <Link key={product.id} to={`/item/${product.id}`}>
               {product.title}
             </Link>
           </div>

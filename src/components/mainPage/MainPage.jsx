@@ -10,12 +10,14 @@ export const MainPage = ({ isLoggedIn, cartChangeItemsPage, cartChangeItem }) =>
     <Routes>
       <Route
         path="/"
+        exact
         element={
           <ItemsPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
         }
       />
       <Route
-        path="/:id"
+        path="/item/:id"
+        exact
         element={<Item isLoggedIn={isLoggedIn} cartChangeItem={cartChangeItem} />}
       />
       <Route path="/shop-information" element={<ShopPage />} />
