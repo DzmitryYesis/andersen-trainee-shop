@@ -1,9 +1,10 @@
 import style from './Header.module.css';
+import { LeftHeaderBlock } from './leftHeaderBlock/LeftHeaderBlock';
 import { RightHeaderBlock } from './rightHeaderBlock/RightHeaderBlock';
 
 export const Header = ({ setIsShowPopUp, isLoggedIn, setIsLoggedIn }) => (
   <div className={style.wrapper}>
-    <div>Navigation</div>
+    <LeftHeaderBlock />
     {isLoggedIn ? (
       <RightHeaderBlock setIsLoggedIn={setIsLoggedIn} />
     ) : (
