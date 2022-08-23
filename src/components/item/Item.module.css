@@ -1,6 +1,7 @@
-.info {
+.wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    height: 87vh;
 }
 
 .wrapperImg {
@@ -9,8 +10,8 @@
 }
 
 .mainImg {
-    height: 200px;
-    width: 200px;
+    height: 240px;
+    width: 240px;
 }
 
 .secondRowImg {
@@ -19,6 +20,52 @@
 }
 
 .otherImg {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 40px;
+    color: #092878;
+}
+
+.description {
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+.price {
+    margin-left: 25px;
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.buyRow {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.span {
+    font-size: 23px;
+}
+
+.input {
+    width: 25px;
+    text-align: center;
+}
+
+.button {
+    width: 130px;
+    height: 27px;
+    border-radius: 4px;
+    background-color: #c78585;
+    margin-left: 15px;
 }

@@ -14,6 +14,14 @@ const App = () => {
     setCart({ ...cart, amount: cart.amount + amount, items: cart.items + 1 });
   };
 
+  const cartChangeItem = (amount, number) => {
+    setCart({
+      ...cart,
+      amount: cart.amount + amount * number,
+      items: cart.items + number,
+    });
+  };
+
   return (
     <div className={style.app}>
       <Header
@@ -23,7 +31,11 @@ const App = () => {
         cart={cart}
         setCart={setCart}
       />
-      <MainPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
+      <MainPage
+        isLoggedIn={isLoggedIn}
+        cartChangeItemsPage={cartChangeItemsPage}
+        cartChangeItem={cartChangeItem}
+      />
       <Authorization
         isShowPopUp={isShowPopUp}
         setIsShowPopUp={setIsShowPopUp}

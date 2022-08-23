@@ -5,7 +5,7 @@ import { ItemsPage } from '../itemsPage/ItemsPage';
 import { Page404 } from '../page404/Page404';
 import { ShopPage } from '../shopPage/ShopPage';
 
-export const MainPage = ({ isLoggedIn, cartChangeItemsPage }) => (
+export const MainPage = ({ isLoggedIn, cartChangeItemsPage, cartChangeItem }) => (
   <div>
     <Routes>
       <Route
@@ -14,7 +14,10 @@ export const MainPage = ({ isLoggedIn, cartChangeItemsPage }) => (
           <ItemsPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
         }
       />
-      <Route path="/:id" element={<Item isLoggedIn={isLoggedIn} />} />
+      <Route
+        path="/:id"
+        element={<Item isLoggedIn={isLoggedIn} cartChangeItem={cartChangeItem} />}
+      />
       <Route path="/shop-information" element={<ShopPage />} />
       <Route path="*" element={<Page404 />} />
     </Routes>
