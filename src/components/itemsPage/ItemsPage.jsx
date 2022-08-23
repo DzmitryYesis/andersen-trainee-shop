@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import style from './ItemsPage.module.css';
 
-export const ItemsPage = ({ isLoggedIn }) => {
+export const ItemsPage = ({ isLoggedIn, cartChangeItemsPage }) => {
   const [state, setState] = useState(null);
 
   useEffect(() => {
@@ -26,7 +26,13 @@ export const ItemsPage = ({ isLoggedIn }) => {
             {product.title}
           </Link>
           <p>{product.price}</p>
-          <button type="button">{isLoggedIn ? 'Add' : 'Login for added'}</button>
+          {isLoggedIn ? (
+            <button type="button" onClick={() => cartChangeItemsPage(product.price)}>
+              Add
+            </button>
+          ) : (
+            <button type="button">Login for added</button>
+          )}
         </div>
       ))}
     </div>

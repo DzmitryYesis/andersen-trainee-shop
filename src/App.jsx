@@ -10,6 +10,10 @@ const App = () => {
   const [isShowPopUp, setIsShowPopUp] = useState(false);
   const [cart, setCart] = useState({ items: 0, amount: 0 });
 
+  const cartChangeItemsPage = amount => {
+    setCart({ ...cart, amount: cart.amount + amount, items: cart.items + 1 });
+  };
+
   return (
     <div className={style.app}>
       <header className={style.header}>
@@ -20,7 +24,7 @@ const App = () => {
           cart={cart}
         />
       </header>
-      <MainPage isLoggedIn={isLoggedIn} />
+      <MainPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
       <Authorization
         isShowPopUp={isShowPopUp}
         setIsShowPopUp={setIsShowPopUp}
