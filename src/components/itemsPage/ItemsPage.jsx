@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import style from './ItemsPage.module.css';
 
 export const ItemsPage = ({ isLoggedIn }) => {
@@ -20,7 +22,9 @@ export const ItemsPage = ({ isLoggedIn }) => {
             src={product.images[0]}
             alt="Images of product"
           />
-          <p>{product.title}</p>
+          <Link key={product.id} to={`/${product.id}`}>
+            {product.title}
+          </Link>
           <p>{product.price}</p>
           <button type="button">{isLoggedIn ? 'Add' : 'Login for added'}</button>
         </div>
