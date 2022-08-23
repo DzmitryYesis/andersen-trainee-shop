@@ -14,7 +14,7 @@ export const MainPage = ({ isLoggedIn, cartChangeItemsPage }) => (
           <ItemsPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
         }
       />
-      <Route path="/:id" element={<Item />} />
+      <Route path="/:id" element={<Item isLoggedIn={isLoggedIn} />} />
       <Route path="/shop-information" element={<ShopPage />} />
       <Route path="*" element={<Page404 />} />
     </Routes>

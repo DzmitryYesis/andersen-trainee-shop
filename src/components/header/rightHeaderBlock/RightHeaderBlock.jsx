@@ -1,16 +1,24 @@
 import style from './RightHeaderBlock.module.css';
 
-export const RightHeaderBlock = ({ setIsLoggedIn, cart }) => (
+export const RightHeaderBlock = ({ setIsLoggedIn, cart, isLoggedIn, setIsShowPopUp }) => (
   <div className={style.wrapper}>
-    <div className={style.shoppingCart}>
-      <p>Shopping cart:</p>
-      <div className={style.countSum}>
-        <span>Items: {cart.items}</span>
-        <span>Amount: {cart.amount}</span>
+    {isLoggedIn ? (
+      <div>
+        <div className={style.shoppingCart}>
+          <p>Shopping cart:</p>
+          <div className={style.countSum}>
+            <span>Items: {cart.items}</span>
+            <span>Amount: {cart.amount}</span>
+          </div>
+        </div>
+        <button type="button" onClick={() => setIsLoggedIn(false)}>
+          LogOut
+        </button>
       </div>
-    </div>
-    <button type="button" onClick={() => setIsLoggedIn(false)}>
-      LogOut
-    </button>
+    ) : (
+      <button type="button" onClick={() => setIsShowPopUp(true)}>
+        LogIn
+      </button>
+    )}
   </div>
 );
