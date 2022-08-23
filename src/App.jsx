@@ -16,14 +16,12 @@ const App = () => {
 
   return (
     <div className={style.app}>
-      <header className={style.header}>
-        <Header
-          setIsShowPopUp={setIsShowPopUp}
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          cart={cart}
-        />
-      </header>
+      <Header
+        setIsShowPopUp={setIsShowPopUp}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        cart={cart}
+      />
       <MainPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
       <Authorization
         isShowPopUp={isShowPopUp}

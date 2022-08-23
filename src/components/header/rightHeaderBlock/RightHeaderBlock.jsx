@@ -5,10 +5,10 @@ export const RightHeaderBlock = ({ setIsLoggedIn, cart, isLoggedIn, setIsShowPop
     {isLoggedIn ? (
       <div className={style.rowDiv}>
         <div className={style.shoppingCart}>
-          <p>Shopping cart:</p>
+          <p className={style.pCart}>Shopping cart:</p>
           <div className={style.countSum}>
-            <span>Items: {cart.items}</span>
-            <span>Amount: {cart.amount}</span>
+            <span className={style.span}>Items: {cart.items}</span>
+            <span className={style.span}>Amount: {cart.amount}</span>
           </div>
         </div>
         <button
