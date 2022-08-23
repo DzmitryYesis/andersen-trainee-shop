@@ -1,0 +1,24 @@
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapperImg {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainImg {
+    height: 200px;
+    width: 200px;
+}
+
+.secondRowImg {
+    display: flex;
+    flex-direction: row;
+}
+
+.otherImg {
+    height: 100px;
+    width: 100px;
+}
