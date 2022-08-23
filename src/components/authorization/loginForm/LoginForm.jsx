@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import {
   initialErrorsState,
   initialLoginDataState,
@@ -12,6 +14,7 @@ import style from './LoginForm.module.css';
 export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
   const [loginData, setLoginData] = useState(initialLoginDataState);
   const [errors, setErrors] = useState(initialErrorsState);
+  const navigate = useNavigate();
 
   const checkValidForm = () => {
     let isValid = true;
@@ -38,6 +41,7 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
     if (isValid) {
       setIsLoggedIn(true);
       closePopUp();
+      navigate('/');
     } else {
       setErrors(errorsObj);
     }
