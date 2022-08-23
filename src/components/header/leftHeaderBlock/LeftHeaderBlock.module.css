@@ -1,7 +1,11 @@
 .isActive {
     color: #e50a0a;
+    margin-left: 40px;
+    font-size: 30px;
 }
 
 .nonIsActive {
-color: black;
+    color: black;
+    margin-left: 40px;
+    font-size: 30px;
 }
