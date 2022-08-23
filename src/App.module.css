@@ -1,9 +1,8 @@
 .app {
     background-color: #f1eeee;
-    height: 100vh;
 }
 
 .header {
     background-color: #c78585;
-    height: 7vh;
+    height: 75px;
 }

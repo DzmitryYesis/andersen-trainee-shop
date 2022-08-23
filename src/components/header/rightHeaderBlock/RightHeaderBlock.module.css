@@ -1,10 +1,16 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: 75px;
 }
 
 .shoppingCart {
+    display: flex;
+    flex-direction: row;
+}
+
+.countSum {
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
 }
