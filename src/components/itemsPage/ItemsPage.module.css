@@ -1,0 +1,18 @@
+.productWrapper {
+    max-width: 170px;
+    width: 100%;
+}
+
+.productImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+}
+
+.asd {
+    margin-left: 25px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+}
