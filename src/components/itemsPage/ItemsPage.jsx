@@ -14,24 +14,34 @@ export const ItemsPage = ({ isLoggedIn, cartChangeItemsPage }) => {
   }, []);
 
   return (
-    <div className={style.asd}>
+    <div className={style.wrapper}>
       {state?.map(product => (
         <div className={style.productWrapper} key={product.id}>
-          <img
-            className={style.productImg}
-            src={product.images[0]}
-            alt="Images of product"
-          />
-          <Link key={product.id} to={`/${product.id}`}>
-            {product.title}
-          </Link>
-          <p>{product.price}</p>
+          <div className={style.divImg}>
+            <img
+              className={style.productImg}
+              src={product.images[0]}
+              alt="Images of product"
+            />
+          </div>
+          <div className={style.divTitle}>
+            <Link key={product.id} to={`/${product.id}`}>
+              {product.title}
+            </Link>
+          </div>
+          <p>Price: {product.price}</p>
           {isLoggedIn ? (
-            <button type="button" onClick={() => cartChangeItemsPage(product.price)}>
+            <button
+              className={style.button}
+              type="button"
+              onClick={() => cartChangeItemsPage(product.price)}
+            >
               Add
             </button>
           ) : (
-            <button type="button">Login for added</button>
+            <button className={style.button} type="button">
+              Login for added
+            </button>
           )}
         </div>
       ))}
