@@ -21,6 +21,7 @@ const App = () => {
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         cart={cart}
+        setCart={setCart}
       />
       <MainPage isLoggedIn={isLoggedIn} cartChangeItemsPage={cartChangeItemsPage} />
       <Authorization
