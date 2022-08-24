@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { getItems } from '../../api/items';
+
 import style from './ItemsPage.module.css';
 
 export const ItemsPage = ({ isLoggedIn, cartChangeItemsPage }) => {
   const [state, setState] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
-      .then(res => res.json())
-      .then(data => setState(data));
+    getItems(setState);
   }, []);
 
   return (

@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import { getItem } from '../../api/items';
+
 import style from './Item.module.css';
 
 export const Item = ({ isLoggedIn, cartChangeItem }) => {
-  const { id } = useParams();
   const [item, setItem] = useState(null);
   const [numberItem, setNumberItem] = useState(1);
+
+  const { id } = useParams();
 
   const handleOnChangeNumberItem = event => {
     setNumberItem(event.target.value);
@@ -18,9 +21,7 @@ export const Item = ({ isLoggedIn, cartChangeItem }) => {
   };
 
   useEffect(() => {
-    fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
-      .then(res => res.json())
-      .then(data => setItem(data));
+    getItem(id, setItem);
   }, []);
 
   return (
