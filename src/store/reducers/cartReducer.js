@@ -1,4 +1,9 @@
-import { ADD_NUMBER_OF_ITEM, ADD_ONE_ITEM, CLEAR_CART } from '../actions/cartActions';
+import {
+  ADD_ITEM_IN_CART,
+  ADD_NUMBER_OF_ITEM,
+  ADD_ONE_ITEM,
+  CLEAR_CART,
+} from '../actions/cartActions';
 
 const initialState = {
   headerCart: {
@@ -30,6 +35,25 @@ export const cartReducer = (state = initialState, action) => {
       };
     case CLEAR_CART:
       return { ...state, headerCart: { ...state.headerCart, items: 0, amount: 0 } };
+    case ADD_ITEM_IN_CART: {
+      const index = state.cartPage.findIndex(({ id }) => id === action.payload.item.id);
+      if (index === -1) {
+        return { ...state, cartPage: [...state.cartPage, action.payload.item] };
+      }
+      return {
+        ...state,
+        cartPage: state.cartPage.map(item =>
+          item.id === action.payload.item.id
+            ? {
+                ...item,
+                totalCount: item.totalCount + action.payload.number,
+                totalPrice:
+                  item.totalPrice + action.payload.item.price * action.payload.number,
+              }
+            : item,
+        ),
+      };
+    }
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { addOneItemAC } from '../../store/actions/cartActions';
+import { addItemInCartAC, addOneItemAC } from '../../store/actions/cartActions';
 import { selectItems } from '../../store/selectors/itemsSelectors';
 import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 import { getUsersTC } from '../../store/thunks/itemsThunks';
@@ -15,8 +15,17 @@ export const ItemsPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const state = useSelector(selectItems);
 
-  const handleAddItem = amount => {
-    dispatch(addOneItemAC(amount));
+  const handleAddItem = product => {
+    const item = {
+      image: product.image,
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      totalCount: 1,
+      totalPrice: product.price,
+    };
+    dispatch(addItemInCartAC(item, 1));
+    dispatch(addOneItemAC(product.price));
   };
 
   useEffect(() => {
@@ -44,7 +53,7 @@ export const ItemsPage = () => {
             <button
               className={style.button}
               type="button"
-              onClick={() => handleAddItem(product.price)}
+              onClick={() => handleAddItem(product)}
             >
               Add
             </button>
