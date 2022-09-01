@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   addOnePositionOnCartAC,
+  clearCartAC,
   deleteItemOnCart,
   deleteOnePositionOnCartAC,
 } from '../../store/actions/cartActions';
@@ -12,6 +13,8 @@ import style from './Cart.module.css';
 export const Cart = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectCartItems);
+
+  const priceItems = items.reduce((ac, curr) => ac + curr.totalPrice, 0);
 
   const handleDelete = id => {
     dispatch(deleteOnePositionOnCartAC(id));
@@ -65,6 +68,19 @@ export const Cart = () => {
           ))}
         </tbody>
       </table>
+      <div className={style.totalPriceDiv}>Total Price: {priceItems}</div>
+      <div>
+        <button
+          className={style.button}
+          type="button"
+          onClick={() => dispatch(clearCartAC())}
+        >
+          Clear
+        </button>
+        <button className={style.button} disabled type="button">
+          Buy
+        </button>
+      </div>
     </div>
   );
 };

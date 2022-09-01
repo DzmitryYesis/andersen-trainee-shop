@@ -24,3 +24,12 @@
     height: 90px;
     width: 80px;
 }
+
+.totalPriceDiv {
+    margin-left: 500px;
+}
+
+.button {
+    width: 100px;
+    height: 30px;
+}
