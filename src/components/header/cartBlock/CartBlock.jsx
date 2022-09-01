@@ -46,7 +46,7 @@ export const CartBlock = () => {
             </button>
             <div className={style.countSum}>
               <span className={style.span}>Items: {countItems}</span>
-              <span className={style.span}>Amount: {priceItems}</span>
+              <span className={style.span}>Amount: {priceItems.toFixed(2)}</span>
             </div>
           </div>
           <button className={style.button} type="button" onClick={handleLogOut}>

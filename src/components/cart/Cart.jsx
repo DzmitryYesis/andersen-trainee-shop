@@ -58,7 +58,7 @@ export const Cart = () => {
                   +
                 </button>
               </td>
-              <td>{item.totalPrice}</td>
+              <td>{item.totalPrice.toFixed(2)}</td>
               <td>
                 <button type="button" onClick={() => handleDeleteAllItem(item.id)}>
                   Delete
@@ -68,7 +68,7 @@ export const Cart = () => {
           ))}
         </tbody>
       </table>
-      <div className={style.totalPriceDiv}>Total Price: {priceItems}</div>
+      <div className={style.totalPriceDiv}>Total Price: {priceItems.toFixed(2)}</div>
       <div>
         <button
           className={style.button}
