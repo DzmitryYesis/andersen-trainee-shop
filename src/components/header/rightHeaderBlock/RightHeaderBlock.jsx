@@ -13,7 +13,6 @@ export const RightHeaderBlock = () => {
   const cart = useSelector(selectHeaderCart);
 
   const handleLogOut = () => {
-    // setCart({ items: 0, amount: 0 });
     dispatch(clearCartAC());
     dispatch(setIsLoggedInAC(false));
   };
