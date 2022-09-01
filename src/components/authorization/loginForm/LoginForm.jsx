@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import {
-  initialErrorsState,
-  initialLoginDataState,
-} from '../../../constants/authorization';
-import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginAction';
+  clearErrorAC,
+  setErrorsAC,
+  setIsLoggedInAC,
+  setIsShowPopUpAC,
+  setLoginDataAC,
+} from '../../../store/actions/loginAction';
+import { selectErrors, selectLoginData } from '../../../store/selectors/loginSelectors';
 
 import { ButtonBlock } from './buttonBlock/ButtonBlock';
 import { Input } from './Input/Input';
 import style from './LoginForm.module.css';
 
 export const LoginForm = () => {
-  const [loginData, setLoginData] = useState(initialLoginDataState);
-  const [errors, setErrors] = useState(initialErrorsState);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const errors = useSelector(selectErrors);
+  const loginData = useSelector(selectLoginData);
 
   const checkValidForm = () => {
     let isValid = true;
@@ -46,22 +49,16 @@ export const LoginForm = () => {
       dispatch(setIsShowPopUpAC(false));
       navigate('/');
     } else {
-      setErrors(errorsObj);
+      dispatch(setErrorsAC(errorsObj));
     }
   };
 
-  const clearState = () => {
-    setErrors(initialErrorsState);
-    setLoginData(initialLoginDataState);
-  };
-
   const handleStateChange = (formName, name) => {
-    setErrors({ ...errors, [formName]: '' });
-    setLoginData({ ...loginData, [formName]: name });
+    dispatch(clearErrorAC(formName));
+    dispatch(setLoginDataAC(formName, name));
   };
 
   const cancelClick = () => {
-    clearState();
     dispatch(setIsShowPopUpAC(false));
   };
 
