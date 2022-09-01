@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { getItems } from '../../api/items';
+import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
 import style from './ItemsPage.module.css';
 
 export const ItemsPage = ({ cartChangeItemsPage }) => {
   const [state, setState] = useState(null);
 
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     getItems(setState);

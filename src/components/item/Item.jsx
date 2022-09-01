@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { getItem } from '../../api/items';
+import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
 import style from './Item.module.css';
 
@@ -11,7 +12,7 @@ export const Item = ({ cartChangeItem }) => {
   const [item, setItem] = useState(null);
   const [numberItem, setNumberItem] = useState(1);
 
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const { id } = useParams();
 
