@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { getItem } from '../../api/items';
 
 import style from './Item.module.css';
 
-export const Item = ({ isLoggedIn, cartChangeItem }) => {
+export const Item = ({ cartChangeItem }) => {
   const [item, setItem] = useState(null);
   const [numberItem, setNumberItem] = useState(1);
+
+  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
 
   const { id } = useParams();
 
@@ -21,7 +24,7 @@ export const Item = ({ isLoggedIn, cartChangeItem }) => {
   };
 
   useEffect(() => {
-    getItem(item.id, setItem);
+    getItem(id, setItem);
   }, []);
 
   return (

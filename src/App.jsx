@@ -6,8 +6,6 @@ import { Header } from './components/header/Header';
 import { MainPage } from './components/mainPage/MainPage';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isShowPopUp, setIsShowPopUp] = useState(false);
   const [cart, setCart] = useState({ items: 0, amount: 0 });
 
   const cartChangeItemsPage = amount => {
@@ -24,23 +22,12 @@ const App = () => {
 
   return (
     <div className={style.app}>
-      <Header
-        setIsShowPopUp={setIsShowPopUp}
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-        cart={cart}
-        setCart={setCart}
-      />
+      <Header cart={cart} setCart={setCart} />
       <MainPage
-        isLoggedIn={isLoggedIn}
         cartChangeItemsPage={cartChangeItemsPage}
         cartChangeItem={cartChangeItem}
       />
-      <Authorization
-        isShowPopUp={isShowPopUp}
-        setIsShowPopUp={setIsShowPopUp}
-        setIsLoggedIn={setIsLoggedIn}
-      />
+      <Authorization />
     </div>
   );
 };

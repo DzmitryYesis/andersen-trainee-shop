@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import {
   initialErrorsState,
   initialLoginDataState,
 } from '../../../constants/authorization';
+import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginAction';
 
 import { ButtonBlock } from './buttonBlock/ButtonBlock';
 import { Input } from './Input/Input';
 import style from './LoginForm.module.css';
 
-export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
+export const LoginForm = () => {
   const [loginData, setLoginData] = useState(initialLoginDataState);
   const [errors, setErrors] = useState(initialErrorsState);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const checkValidForm = () => {
     let isValid = true;
@@ -39,8 +42,8 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
     }
 
     if (isValid) {
-      setIsLoggedIn(true);
-      closePopUp();
+      dispatch(setIsLoggedInAC(true));
+      dispatch(setIsShowPopUpAC(false));
       navigate('/');
     } else {
       setErrors(errorsObj);
@@ -59,7 +62,7 @@ export const LoginForm = ({ closePopUp, setIsLoggedIn }) => {
 
   const cancelClick = () => {
     clearState();
-    closePopUp();
+    dispatch(setIsShowPopUpAC(false));
   };
 
   return (

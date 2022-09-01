@@ -1,15 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginAction';
+
 import style from './RightHeaderBlock.module.css';
 
-export const RightHeaderBlock = ({
-  setIsLoggedIn,
-  cart,
-  isLoggedIn,
-  setIsShowPopUp,
-  setCart,
-}) => {
+export const RightHeaderBlock = ({ cart, setCart }) => {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
   const handleLogOut = () => {
     setCart({ items: 0, amount: 0 });
-    setIsLoggedIn(false);
+    dispatch(setIsLoggedInAC(false));
+  };
+
+  const handleLogIn = () => {
+    dispatch(setIsShowPopUpAC(true));
   };
 
   return (
@@ -28,11 +32,7 @@ export const RightHeaderBlock = ({
           </button>
         </div>
       ) : (
-        <button
-          className={style.button}
-          type="button"
-          onClick={() => setIsShowPopUp(true)}
-        >
+        <button className={style.button} type="button" onClick={handleLogIn}>
           LogIn
         </button>
       )}
