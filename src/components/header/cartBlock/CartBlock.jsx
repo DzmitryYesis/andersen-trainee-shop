@@ -22,6 +22,7 @@ export const CartBlock = () => {
   const handleLogOut = () => {
     dispatch(clearCartAC());
     dispatch(setIsLoggedInAC(false));
+    navigate('/');
   };
 
   const handleLogIn = () => {
