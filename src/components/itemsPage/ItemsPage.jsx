@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { getItems } from '../../api/items';
+import { addOneItemAC } from '../../store/actions/cartActions';
 import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
 import style from './ItemsPage.module.css';
 
-export const ItemsPage = ({ cartChangeItemsPage }) => {
+export const ItemsPage = () => {
   const [state, setState] = useState(null);
-
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  const handleAddItem = amount => {
+    dispatch(addOneItemAC(amount));
+  };
 
   useEffect(() => {
     getItems(setState);
@@ -38,7 +43,7 @@ export const ItemsPage = ({ cartChangeItemsPage }) => {
             <button
               className={style.button}
               type="button"
-              onClick={() => cartChangeItemsPage(product.price)}
+              onClick={() => handleAddItem(product.price)}
             >
               Add
             </button>

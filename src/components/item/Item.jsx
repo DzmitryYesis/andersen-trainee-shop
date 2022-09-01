@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { getItem } from '../../api/items';
+import { addNumberOfItem } from '../../store/actions/cartActions';
 import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
 import style from './Item.module.css';
 
-export const Item = ({ cartChangeItem }) => {
+export const Item = () => {
   const [item, setItem] = useState(null);
   const [numberItem, setNumberItem] = useState(1);
-
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const { id } = useParams();
@@ -21,7 +22,7 @@ export const Item = ({ cartChangeItem }) => {
   };
 
   const handleChangeCart = () => {
-    cartChangeItem(item.price, Number(numberItem));
+    dispatch(addNumberOfItem(Number(numberItem), item.price));
   };
 
   useEffect(() => {

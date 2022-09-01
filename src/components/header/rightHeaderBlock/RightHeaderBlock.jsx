@@ -1,15 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 
+import { clearCartAC } from '../../../store/actions/cartActions';
 import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginAction';
+import { selectHeaderCart } from '../../../store/selectors/cartSelectors';
 import { selectIsLoggedIn } from '../../../store/selectors/loginSelectors';
 
 import style from './RightHeaderBlock.module.css';
 
-export const RightHeaderBlock = ({ cart, setCart }) => {
+export const RightHeaderBlock = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const cart = useSelector(selectHeaderCart);
+
   const handleLogOut = () => {
-    setCart({ items: 0, amount: 0 });
+    // setCart({ items: 0, amount: 0 });
+    dispatch(clearCartAC());
     dispatch(setIsLoggedInAC(false));
   };
 
