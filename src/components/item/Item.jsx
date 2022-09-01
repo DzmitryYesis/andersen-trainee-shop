@@ -31,7 +31,6 @@ export const Item = () => {
       totalCount: 1,
       totalPrice: item.price,
     };
-    // dispatch(addNumberOfItem(Number(numberItem), item.price));
     dispatch(addItemInCartAC(itemForCart, Number(numberItem)));
   };
 

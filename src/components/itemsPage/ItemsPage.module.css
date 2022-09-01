@@ -7,8 +7,13 @@
 }
 
 .productWrapper {
-    max-width: 170px;
+    max-width: 180px;
     width: 100%;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .divImg {
@@ -23,7 +28,8 @@
 }
 
 .divTitle {
-    height: 30px;
+    width: 150px;
+    height: 100px;
 }
 
 .button {

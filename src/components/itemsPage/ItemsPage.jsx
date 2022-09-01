@@ -25,7 +25,6 @@ export const ItemsPage = () => {
       totalPrice: product.price,
     };
     dispatch(addItemInCartAC(item, 1));
-    // dispatch(addOneItemAC(product.price));
   };
 
   useEffect(() => {

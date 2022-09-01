@@ -1,10 +1,10 @@
+import { CartBlock } from './cartBlock/CartBlock';
 import style from './Header.module.css';
-import { LeftHeaderBlock } from './leftHeaderBlock/LeftHeaderBlock';
-import { RightHeaderBlock } from './rightHeaderBlock/RightHeaderBlock';
+import { NavigationBlock } from './navigationBlock/NavigationBlock';
 
 export const Header = () => (
   <div className={style.wrapper}>
-    <LeftHeaderBlock />
-    <RightHeaderBlock />
+    <NavigationBlock />
+    <CartBlock />
   </div>
 );

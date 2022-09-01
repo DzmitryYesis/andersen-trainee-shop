@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import style from './LeftHeaderBlock.module.css';
+import style from './NavigationBlock.module.css';
 
-export const LeftHeaderBlock = () => (
+export const NavigationBlock = () => (
   <div>
     <NavLink
       to="/"

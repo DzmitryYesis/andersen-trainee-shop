@@ -7,9 +7,9 @@ import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginA
 import { selectCartItems } from '../../../store/selectors/cartSelectors';
 import { selectIsLoggedIn } from '../../../store/selectors/loginSelectors';
 
-import style from './RightHeaderBlock.module.css';
+import style from './CartBlock.module.css';
 
-export const RightHeaderBlock = () => {
+export const CartBlock = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);

@@ -12,24 +12,6 @@ const initialState = {
 
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case ADD_ONE_ITEM:
-    //   return {
-    //     ...state,
-    //     headerCart: {
-    //       ...state.headerCart,
-    //       items: state.headerCart.items + 1,
-    //       amount: state.headerCart.amount + action.payload.amount,
-    //     },
-    //   };
-    // case ADD_NUMBER_OF_ITEM:
-    //   return {
-    //     ...state,
-    //     headerCart: {
-    //       ...state.headerCart,
-    //       items: state.headerCart.items + action.payload.number,
-    //       amount: state.headerCart.amount + action.payload.amount * action.payload.number,
-    //     },
-    //   };
     case CLEAR_CART:
       return { ...state, cartPage: [] };
     case ADD_ITEM_IN_CART: {
