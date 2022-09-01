@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { addNumberOfItem } from '../../store/actions/cartActions';
+import { addItemInCartAC } from '../../store/actions/cartActions';
 import { selectItems } from '../../store/selectors/itemsSelectors';
 import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
@@ -23,7 +23,16 @@ export const Item = () => {
   };
 
   const handleChangeCart = () => {
-    dispatch(addNumberOfItem(Number(numberItem), item.price));
+    const itemForCart = {
+      image: item.image,
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      totalCount: 1,
+      totalPrice: item.price,
+    };
+    // dispatch(addNumberOfItem(Number(numberItem), item.price));
+    dispatch(addItemInCartAC(itemForCart, Number(numberItem)));
   };
 
   return (

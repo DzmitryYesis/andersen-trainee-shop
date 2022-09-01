@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import cartSVG from '../../../icons/cartSVG.svg';
 import { clearCartAC } from '../../../store/actions/cartActions';
 import { setIsLoggedInAC, setIsShowPopUpAC } from '../../../store/actions/loginAction';
-import { selectHeaderCart } from '../../../store/selectors/cartSelectors';
+import { selectCartItems } from '../../../store/selectors/cartSelectors';
 import { selectIsLoggedIn } from '../../../store/selectors/loginSelectors';
 
 import style from './RightHeaderBlock.module.css';
@@ -13,7 +13,11 @@ export const RightHeaderBlock = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const cart = useSelector(selectHeaderCart);
+  const items = useSelector(selectCartItems);
+
+  const countItems = items.reduce((ac, curr) => ac + curr.totalCount, 0);
+
+  const priceItems = items.reduce((ac, curr) => ac + curr.totalPrice, 0);
 
   const handleLogOut = () => {
     dispatch(clearCartAC());
@@ -41,8 +45,8 @@ export const RightHeaderBlock = () => {
               <img src={cartSVG} alt="some-cart" className={style.svg} />
             </button>
             <div className={style.countSum}>
-              <span className={style.span}>Items: {cart.items}</span>
-              <span className={style.span}>Amount: {cart.amount}</span>
+              <span className={style.span}>Items: {countItems}</span>
+              <span className={style.span}>Amount: {priceItems}</span>
             </div>
           </div>
           <button className={style.button} type="button" onClick={handleLogOut}>
