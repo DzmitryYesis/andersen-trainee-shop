@@ -20,7 +20,7 @@ export const ItemsPage = ({ isLoggedIn, cartChangeItemsPage }) => {
           <div className={style.divImg}>
             <img
               className={style.productImg}
-              src={product.images[0]}
+              src={product.image}
               alt="Images of product"
             />
           </div>

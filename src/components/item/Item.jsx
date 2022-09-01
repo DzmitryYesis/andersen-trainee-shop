@@ -21,17 +21,13 @@ export const Item = ({ isLoggedIn, cartChangeItem }) => {
   };
 
   useEffect(() => {
-    getItem(id, setItem);
+    getItem(item.id, setItem);
   }, []);
 
   return (
     <div className={style.wrapper}>
       <div className={style.wrapperImg}>
-        <img className={style.mainImg} src={item?.images[0]} alt="item-view" />
-        <div className={style.secondRowImg}>
-          <img className={style.otherImg} src={item?.images[1]} alt="item-view" />
-          <img className={style.otherImg} src={item?.images[2]} alt="item-view" />
-        </div>
+        <img className={style.mainImg} src={item?.image} alt="item-view" />
       </div>
       <div className={style.info}>
         <span className={style.title}>{item?.title}</span>
