@@ -30,16 +30,16 @@ export const Cart = () => {
 
   return (
     <div className={style.wrapper}>
-      <table border="1" align="centre">
-        <tbody className={style.body}>
-          <tr className={style.headerRow}>
-            <th className={style.headerColumn}>Image</th>
-            <th className={style.headerColumn}>Product ID</th>
-            <th className={style.headerColumn}>Title</th>
-            <th className={style.headerColumn}>Price</th>
-            <th className={style.headerColumn}>Total count</th>
-            <th className={style.headerColumn}>Total price</th>
-            <th className={style.headerColumn}>Action</th>
+      <table className={style.table}>
+        <tbody>
+          <tr>
+            <th>Image</th>
+            <th>Product ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Total count</th>
+            <th>Total price</th>
+            <th>Action</th>
           </tr>
           {items.map(item => (
             <tr key={item.id}>
@@ -69,7 +69,7 @@ export const Cart = () => {
         </tbody>
       </table>
       <div className={style.totalPriceDiv}>Total Price: {priceItems.toFixed(2)}</div>
-      <div>
+      <div className={style.buttonBlock}>
         <button
           className={style.button}
           type="button"
