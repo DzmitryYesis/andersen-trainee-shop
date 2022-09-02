@@ -7,9 +7,9 @@ import { addItemInCartAC } from '../../store/actions/cartActions';
 import { selectItems } from '../../store/selectors/itemsSelectors';
 import { selectIsLoggedIn } from '../../store/selectors/loginSelectors';
 
-import style from './Item.module.css';
+import style from './ItemPage.module.css';
 
-export const Item = () => {
+export const ItemPage = () => {
   const [numberItem, setNumberItem] = useState(1);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);

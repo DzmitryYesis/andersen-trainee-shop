@@ -1,0 +1,41 @@
+.wrapper {
+    margin-left: 25px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+}
+
+.productWrapper {
+    max-width: 180px;
+    width: 100%;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divImg {
+    width: 150px;
+    height: 150px;
+}
+
+.productImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+}
+
+.divTitle {
+    width: 150px;
+    height: 100px;
+}
+
+.button {
+    width: 130px;
+    height: 27px;
+    border-radius: 4px;
+    background-color: #c78585;
+    margin-left: 15px;
+}
